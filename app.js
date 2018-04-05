@@ -4,11 +4,11 @@ const yargs=require('yargs');
 const notes=require('./notes');
 
 var argv=yargs.argv;
-console.log(argv);
 var command=process.argv[2];
 
 if(command=="add"){
-    notes.addNote(argv.title,argv.body);
+    var note=notes.addNote(argv.title,argv.body);
+    console.log(note);
 }else if(command=="list"){
    notes.getAll();
 }else if(command=="remove"){

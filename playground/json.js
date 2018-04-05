@@ -1,16 +1,3 @@
-// var obj={
-//     name:"Anand"
-// }
-
-// var stringObj=JSON.stringify(obj);
-
-// console.log(typeof stringObj);
-// console.log(stringObj);
-
-// var person='{"name":"Anand","age":"24"}';
-// var personObj=JSON.parse(person)
-// console.log(typeof personObj);
-// console.log(personObj.name);
 
 const fs=require('fs');
 
