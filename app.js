@@ -10,7 +10,10 @@ if(command=="add"){
     var note=notes.addNote(argv.title,argv.body);
     console.log(note);
 }else if(command=="list"){
-   notes.getAll();
+   var allNotes=notes.getAll();
+   console.log(`Printing ${allNotes.length} note(s).`);
+   allNotes.forEach((note)=>notes.logNote(note));
+   
 }else if(command=="remove"){
     var result=notes.remove(argv.title);
     if(result){
@@ -23,7 +26,7 @@ if(command=="add"){
     if(result==null){
         console.log("Not Item found with give Title");
     }else{
-        console.log(result);
+        notes.logNote(result);
     }
 }else{
     console.log("Command not recognised");   
