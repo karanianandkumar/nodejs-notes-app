@@ -12,9 +12,19 @@ if(command=="add"){
 }else if(command=="list"){
    notes.getAll();
 }else if(command=="remove"){
-    notes.remove(argv.title);
+    var result=notes.remove(argv.title);
+    if(result){
+        console.log("Successfully deleted.");
+    }else{
+        console.log("No Item available with Title");
+    }
 }else if(command=="read"){
-    notes.getNote(argv.title);
+    var result=notes.getNote(argv.title);
+    if(result==null){
+        console.log("Not Item found with give Title");
+    }else{
+        console.log(result);
+    }
 }else{
     console.log("Command not recognised");   
 }

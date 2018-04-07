@@ -35,11 +35,16 @@ var getAll=()=>{
 }
 
 var remove=(title)=>{
-    console.log("Removed :",title);
+    var notes=fetchNotes();
+    var filteredNotes=notes.filter((item)=>item.title!=title);
+    saveNotes(filteredNotes);
+    return notes.length!=filteredNotes.length;
 }
 
 var getNote=(title)=>{
-    console.log("Read ",title);
+    var notes=fetchNotes();
+    var filteredNotes=notes.filter((item)=>item.title===title);
+    return filteredNotes.length>0?filteredNotes[0]:null;
 }
 module.exports={
     addNote,
